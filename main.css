@@ -28,33 +28,33 @@ div.form-group button{
 div.widget {
 	width: 300px;
 	height: 300px;
-	border-style: dashed;
-	border-width: 1px;
-	border-color: blue;
 	padding: 5px;
 	position: relative;
 	float: left;
 	margin: 15px;
+	box-shadow: 1px 1px 5px #c4c4c4;
+	-webkit-animation-name: widget-in; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-name: widget-in;
+    animation-duration: 2s;
+    cursor: pointer;
+}
 
+div.widget.over {
+	border: 2px dashed #a9a9a9;
 }
 
 div.menu {
 	z-index: 100px;
-	border-right-color: #c6c6c6;
-	border-right-style: solid;
-	border-right-width: 1px;
 	width: 20%;
-	min-height: 400px;
 	position: relative;
 	float: left;
+	box-shadow: 1px 1px  5px #c4c4c4;
 }
 
 div.content {
 	position: relative;
 	width: 78%;
-	border-style: dashed;
-	border-width: 1px;
-	border-color: red;
 	float: left;
 	margin: 0 auto;
 }
@@ -62,16 +62,47 @@ div.content {
 div.widget .remove {
 	content: "X";
 	position: absolute;
-	top: -12px;
-	right: -10px;
+	top: -10px;
+	right: -13px;
 }
 
 div.widget .remove:after {
 	content: "X";
     padding-right: 8px;
-    color: grey;
+    color: #9d9494;
     font-weight: bold;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	cursor: pointer;
 	font-size: 20px;
+}
+
+
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes widget-in {
+    0%   {opacity: 0}
+    10%  {opacity: 0.1}
+    50%  {opacity: 0.5}
+    75%  {opacity: 0.75}
+    100% {opacity: 1}
+}
+
+/* Standard syntax */
+@keyframes widget-in {
+    0%   {opacity: 0}
+    10%   {opacity: 0.1}
+    50%  {opacity: 0.5}
+    75%  {opacity: 0.75}
+    100% {opacity: 1}
+}
+
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
 }
